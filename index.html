@@ -21,8 +21,44 @@
             <div class="main-header"></div>
             <section class="app-container clearfix">
                 <div class="left-side">
-                    <div class="left-header"></div>
-                    <div class="contacts"></div>
+                    <div class="left-header">
+                        <div class="user-image">
+                        <img class="img-header" src="img/avatar_io.jpg" alt="">
+                        <span class="font-1">Sofia</span>
+                        </div>
+                        <div class="left-icons">
+                            <div><i class="fas fa-circle-notch"></i></div>
+                            <div><i class="fas fa-comment-alt"></i></div>
+                            <div><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    <div class="notifiche">
+                        <div class="bell">
+                            <i class="fas fa-bell-slash"></i>
+                            <div><p class="font-1">Ricevi notifiche di nuovi messaggi</p>
+                                <a href=""><p class="font-1">Attiva notifiche desktop</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <div class="contacts">
+                        <div v-for="element in contacts">
+                            <div class="user-info">
+                                <div class="contact-img">
+                                    <img :src="'img/avatar' +element.avatar+ '.jpg'" :alt="element.name">
+                                </div>
+                                <div class="contact-details">
+                                    <p class="font-1">{{element.name}}</p>
+                                    <span class="font-2">Ultimo messaggio inviato</span>
+                                </div>
+                                <div class="message-time">
+                                    <span class="font-2">12:00</span>
+                                </div>
+                            </div>
+                    </div>
                 </div>
                 <div class="right-side">
                     <div class="right-header"></div>

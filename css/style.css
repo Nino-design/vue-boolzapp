@@ -17,10 +17,20 @@ html {
 }
 
 
+.font-1{
+    font-size: 0.7em;
+}
+
+.font-2{
+    font-size: 0.6em;
+    color: lightgray;
+}
+
 .page-container{
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background-color: rgba(213,219,217,255);
 }
 
 
@@ -28,15 +38,15 @@ main{
     width: 100%;
     height: calc(100% - 80px);
     overflow: hidden;
-    background-color: aqua;
+    background-color: rgba(213,219,217,255);
     position: relative;
-
+    
 }
 
 
 .main-header{
     height: 80px;
-    background-color: green;
+    background-color: rgba(0,150,136,255);
 }
 
 .app-container{
@@ -51,7 +61,7 @@ main{
 
 .left-header, .right-header{
     height: 50px;
-    background-color: orange;
+    background-color: rgba(234,234,234,255);
 }
 
 .messages{
@@ -60,11 +70,111 @@ main{
     overflow-y: auto;
 }
 
+.message-time{
+    margin-right: 1.3em;
+}
+
 .left-side{
     float: left;
-    background-color: blue;
+    background-color: white;
     width: 35%;
     height: 100%;
+}
+
+.left-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-icons{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1em;
+    
+}
+
+.left-icons i{
+    padding: 0 0.5em;
+    color: rgba(177,177,177,255);
+}
+
+.img-header{
+    width: 10%;
+    border-radius: 50%;
+    margin-left: 0.5em;
+}
+
+
+.user-image{
+    display: flex;
+    align-items: center;
+}
+
+.notifiche{
+    height: 60px;
+    background-color: rgba(142,218,252,255);
+    display: flex;
+    align-items: center;
+}
+
+.bell{
+    display: flex;
+    align-items: center;
+}
+
+.bell i{
+    font-size: 1em;
+    color: rgba(142,218,252,255);;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 50%;
+    line-height: 35px;
+    text-align: center;
+    margin-right: 0.2em;
+    margin-left: 1.3em;
+}
+
+
+.search{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: #f8f4f4;
+}
+
+.search input{
+    width: 94%;
+    height: 20px;
+    border: none;
+}
+
+.contacts{
+    width: 100%;
+    height: calc(100% - 110px);
+    overflow-y: auto;
+}
+
+.user-info{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-img img{
+    width: 12%;
+    border-radius: 50%;
+    margin-top: 0.3em;
+    margin-left: 1.3em;
+}
+
+.contact-details{
+    position: absolute;
+    top:5px;
+    left: 70px;
 }
 
 .right-side{
