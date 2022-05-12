@@ -170,7 +170,9 @@ const app = new Vue(
             
         },
         methods:{
-
+            selectUser(index){
+                this.contact = index;
+            }
         },
     }
    

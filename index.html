@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="contacts">
-                        <div :class="{  'active': contact===index }" v-for="(element, index) in contacts">
+                        <div :class="{  'active': contact===index }" v-for="(element, index) in contacts" @click="selectUser(index)">
                             <div class="user-info">
                                 <div class="contact-img">
                                     <img :src="'img/avatar' +element.avatar+ '.jpg'" :alt="element.name">
@@ -77,18 +77,18 @@
                             </div>
                     </div>
                     <div class="messages">
-                        <div class="message-sent">
+                        <div v-for="element in contacts[contact].messages" class="message-sent" :class="element.status === 'sent' ? 'message-sent' : 'message-received'">
                         <div class="message-box">
-                            <p class="font-1">hbhbbhvbhb</p>
-                            <div class="mess-time font-2">12.00</div>
+                            <p class="font-1">{{ element.message }}</p>
+                            <div class="mess-time font-2">{{ element.date }}</div>
                         </div>
                         </div>
-                          <div class="message-received">
+                   <!-- <div class="message-received">
                         <div class="message-box-2">
-                            <p class="font-1">hbhbbhvbhb</p>
+                            <p class="font-1">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
                             <div class="mess-time font-2">12.00</div>
                         </div>
-                          </div>
+                        </div>-->
                     </div>
                     <div class="typing-bar">
                             <i class="far fa-smile"></i>

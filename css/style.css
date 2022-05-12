@@ -215,8 +215,6 @@ main{
 
 
 .messages{
-    display: flex;
-    justify-content:space-around ;
     flex-grow: 1;
     height: calc(100% - 120px);
     background-image: url(../img/mine.jpg);
@@ -224,27 +222,33 @@ main{
 }
 
 .message-sent{
-    justify-content: flex-start;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .message-received{
-    justify-content: flex-end;
+   display: flex;
+   justify-content: flex-start;
 }
 
 .message-box{
     width: 150px;
-    height: 40px;
-    margin: 25px 40px;
-    background-color: white;
+    height: 50px;
+    margin: 15px 40px;
+    background-color:  rgba(213,249,186,255);
     padding: 5px;
     border-radius: 7px;
 }
 
+.message-box p{
+    margin-bottom: 20px;
+}
+
 .message-box-2{
     width: 150px;
-    height: 40px;
-    margin: 25px 40px;
-    background-color: rgba(213,249,186,255);
+    height: 50px;
+    margin: 15px 40px;
+    background-color: white;
     padding: 5px;
     border-radius: 7px;
 }
