@@ -169,7 +169,8 @@ const app = new Vue(
             ],
 
             contact: 0,
-            newText: ''
+            newText: '',
+            searchContact:'',
             
         },
         methods:{
@@ -197,6 +198,15 @@ const app = new Vue(
             },
             getTime(){
                 return dayjs().format('DD-MM-YYYY HH:mm:ss');
+            },
+            filterContact(){
+                this.contacts.forEach(element => {
+                    if(element.name.toLowerCase().includes(this.searchContact.toLowerCase())){
+                        element.visible = true;
+                    }else{
+                        element.visible = false;
+                    }
+                });
             }
         }
        
