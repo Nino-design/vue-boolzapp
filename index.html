@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.25/plugin/customParseFormat.js"></script>
 </head>
 <body>
     <div id="root">
@@ -92,7 +95,7 @@
                     </div>
                     <div class="typing-bar">
                             <i class="far fa-smile"></i>
-                            <input type="text" placeholder="scrivi un messaggio">
+                            <input @keyup.enter ="displayText()" type="text" placeholder="scrivi un messaggio" v-model="newText">
                             <i class="fas fa-microphone"></i>
                     </div>
                 </div>
@@ -100,7 +103,6 @@
         </main>
         </div>
     </div>
-    
 
     <script src="js/script.js"></script>
 </body>

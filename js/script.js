@@ -1,3 +1,5 @@
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+
 const app = new Vue(
     {
         el: '#root',
@@ -167,14 +169,38 @@ const app = new Vue(
             ],
 
             contact: 0,
+            newText: ''
             
         },
         methods:{
             selectUser(index){
                 this.contact = index;
+            },
+
+            displayText(){
+                const choseContact = this.contacts[this.contact];
+                choseContact.messages.push({
+                    date: dayjs().format('DD-MM-YYYY HH:mm:ss'),
+                    message: this.newText,
+                    status: 'sent'
+                });
+                this.newText = '';
+                setTimeout(this.getMessage,1000);
+            },
+            getMessage(){
+                const getContact = this.contacts[this.contact];
+                getContact.messages.push({
+                    date:this.getTime(),
+                    message: 'ok',
+                    status: 'received'
+                })
+            },
+            getTime(){
+                return dayjs().format('DD-MM-YYYY HH:mm:ss');
             }
+        }
+       
         },
-    }
-   
+
 );
 
