@@ -165,6 +165,8 @@ const app = new Vue(
                     ],
                 },
             ],
+
+            contact: 0,
             
         },
         methods:{

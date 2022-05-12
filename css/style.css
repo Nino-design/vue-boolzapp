@@ -52,7 +52,7 @@ main{
 .app-container{
     width: 80%;
     height: 100%;
-    background-color: pink;
+    min-width: 900px;
     position: absolute;
     left: 10%;
     top: 3%;
@@ -64,15 +64,6 @@ main{
     background-color: rgba(234,234,234,255);
 }
 
-.messages{
-    height: calc(100% - 120px);
-    background-color: gray;
-    overflow-y: auto;
-}
-
-.message-time{
-    margin-right: 1.3em;
-}
 
 .left-side{
     float: left;
@@ -138,24 +129,39 @@ main{
 
 
 .search{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 40px;
     background-color: #f8f4f4;
 }
 
-.search input{
-    width: 94%;
-    height: 20px;
+.search-input{
+    display: flex;
+    border: 1px solid #f8f4f4;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    
+}
+
+.input-bar{
+    width: 85%;
+    padding: 5px 10px;
     border: none;
 }
 
+
 .contacts{
     width: 100%;
-    height: calc(100% - 110px);
-    overflow-y: auto;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+}
+
+.active{
+    background-color: rgba(233,235,235,255);
 }
 
 .user-info{
@@ -179,13 +185,94 @@ main{
 
 .right-side{
     float: left;
-    background-color: brown;
     width: calc(100% - 35%);
     height: 100%;
 }
 
+.right-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(177,177,177,255);
+    margin-right: 20px;
+}
+
+.right-icons i{
+    padding: 6px;
+}
+
+
+.img-header-2{
+    width: 5%;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.messages{
+    display: flex;
+    justify-content:space-around ;
+    flex-grow: 1;
+    height: calc(100% - 120px);
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.message-sent{
+    justify-content: flex-start;
+}
+
+.message-received{
+    justify-content: flex-end;
+}
+
+.message-box{
+    width: 150px;
+    height: 40px;
+    margin: 25px 40px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.message-box-2{
+    width: 150px;
+    height: 40px;
+    margin: 25px 40px;
+    background-color: rgba(213,249,186,255);
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.mess-time{
+    text-align: right;
+}
+
+
 .typing-bar{
-    height: 70px;
-    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(234,234,234,255);
+    
+}
+
+.typing-bar input{
+    width: 80%;
+    height: 40px;
+    border: none;
+}
+
+
+.typing-bar i{
+    margin: 0 15px;
+    color: rgba(177,177,177,255);
 }
 

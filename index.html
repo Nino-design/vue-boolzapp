@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Boolzapp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -41,11 +41,13 @@
                         </div>
                     </div>
                     <div class="search">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <div class="search-input">
+                        <label class="search-image" for=""><i class="fas fa-search"></i></label>
+                        <input class="input-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
                     </div>
                     <div class="contacts">
-                        <div v-for="element in contacts">
+                        <div :class="{  'active': contact===index }" v-for="(element, index) in contacts">
                             <div class="user-info">
                                 <div class="contact-img">
                                     <img :src="'img/avatar' +element.avatar+ '.jpg'" :alt="element.name">
@@ -58,12 +60,41 @@
                                     <span class="font-2">12:00</span>
                                 </div>
                             </div>
+                        </div>  
                     </div>
                 </div>
                 <div class="right-side">
-                    <div class="right-header"></div>
-                    <div class="messages"></div>
-                    <div class="typing-bar"></div>
+                    <div class="right-header">
+                        <div class="user-image">
+                            <img class="img-header-2" :src="'img/avatar' + contacts[contact].avatar + '.jpg'" alt="">
+                            <p class="font-1">{{contacts[contact].name}}</p>
+                            <span class="font-2">Ultimo aggiornamento oggi alle 12:00</span>
+                            </div>
+                            <div class="right-icons">
+                                <div><i class="fas fa-search"></i></div>
+                                <div><i class="fas fa-paperclip"></i></div>
+                                <div><i class="fas fa-ellipsis-v"></i></div>
+                            </div>
+                    </div>
+                    <div class="messages">
+                        <div class="message-sent">
+                        <div class="message-box">
+                            <p class="font-1">hbhbbhvbhb</p>
+                            <div class="mess-time font-2">12.00</div>
+                        </div>
+                        </div>
+                          <div class="message-received">
+                        <div class="message-box-2">
+                            <p class="font-1">hbhbbhvbhb</p>
+                            <div class="mess-time font-2">12.00</div>
+                        </div>
+                          </div>
+                    </div>
+                    <div class="typing-bar">
+                            <i class="far fa-smile"></i>
+                            <input type="text" placeholder="scrivi un messaggio">
+                            <i class="fas fa-microphone"></i>
+                    </div>
                 </div>
             </section>
         </main>
