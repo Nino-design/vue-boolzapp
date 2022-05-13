@@ -1,5 +1,6 @@
+// DATA 
 dayjs.extend(window.dayjs_plugin_customParseFormat);
-
+// ARRAY OGGETTI
 const app = new Vue(
     {
         el: '#root',
@@ -167,17 +168,18 @@ const app = new Vue(
                     ],
                 },
             ],
-
+             // COSTANTI
             contact: 0,
             newText: '',
             searchContact:'',
-            
+            // FUNZIONI           
         },
         methods:{
+            // SELEZIOE CONTATTO
             selectUser(index){
                 this.contact = index;
             },
-
+           // VISUALIZZAZIONE MESSAGGIO
             displayText(){
                 const choseContact = this.contacts[this.contact];
                 choseContact.messages.push({
@@ -188,6 +190,7 @@ const app = new Vue(
                 this.newText = '';
                 setTimeout(this.getMessage,1000);
             },
+            // AGGIUNTA MESSAGGIO
             getMessage(){
                 const getContact = this.contacts[this.contact];
                 getContact.messages.push({
@@ -196,9 +199,11 @@ const app = new Vue(
                     status: 'received'
                 })
             },
+            // FUNZIONE DATA
             getTime(){
                 return dayjs().format('DD-MM-YYYY HH:mm:ss');
             },
+            // RICERCA CONTATTO
             filterContact(){
                 this.contacts.forEach(element => {
                     if(element.name.toLowerCase().includes(this.searchContact.toLowerCase())){

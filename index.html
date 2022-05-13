@@ -5,27 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Boolzapp</title>
+    <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <!--FOGLIO CSS-->
     <link rel="stylesheet" href="css/style.css">
+    <!--LINK DATA-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+    <!--VUE-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.25/plugin/customParseFormat.js"></script>
 </head>
 <body>
     <div id="root">
+    <!--CONTENITORE PAGINA-->    
         <div class="page-container">
         <main class="main-container">
             <div class="main-header"></div>
             <section class="app-container clearfix">
+    <!--SEZIONE CONTATTI-->            
                 <div class="left-side">
                     <div class="left-header">
                         <div class="user-image">
+    <!--SEZIONE UTENTE-->                          
                         <img class="img-header" src="img/avatar_io.jpg" alt="">
                         <span class="font-1">Sofia</span>
                         </div>
@@ -35,6 +43,7 @@
                             <div><i class="fas fa-ellipsis-v"></i></div>
                         </div>
                     </div>
+    <!--SEZIONE NOTIFICHE-->                  
                     <div class="notifiche">
                         <div class="bell">
                             <i class="fas fa-bell-slash"></i>
@@ -43,12 +52,14 @@
                             </div>
                         </div>
                     </div>
+     <!--SEZIONE RICERCA-->                 
                     <div class="search">
                         <div class="search-input">
                         <label class="search-image" for=""><i class="fas fa-search"></i></label>
                         <input class="input-bar" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact" @keyup="filterContact()">
                         </div>
                     </div>
+     <!--SEZIONE CONTATTO ATTIVO-->                 
                     <div class="contacts">
                         <div 
                         :class="{  'active': contact===index }" 
@@ -69,6 +80,7 @@
                         </div>  
                     </div>
                 </div>
+     <!--SEZIONE MESSAGGI-->             
                 <div class="right-side">
                     <div class="right-header">
                         <div class="user-image">
@@ -96,6 +108,7 @@
                         </div>
                         </div>-->
                     </div>
+    <!--SEZIONE SCRITTURA MESSAGGIO-->                  
                     <div class="typing-bar">
                             <i class="far fa-smile"></i>
                             <input @keyup.enter ="displayText()" type="text" placeholder="scrivi un messaggio" v-model="newText">
@@ -106,7 +119,7 @@
         </main>
         </div>
     </div>
-
+    <!--LINK JS-->  
     <script src="js/script.js"></script>
 </body>
 </html>
